@@ -12,20 +12,15 @@
     <?php $args = array( 'post_type' => 'services', 'posts_per_page' => 10 );
       $loop = new WP_Query( $args );
       while ( $loop->have_posts() ) : $loop->the_post();
-        the_title();
-        echo '<div class="entry-content">';
-        the_content();
-        echo '</div>';
+        echo '<div class="text-box">
+           <div class = "text-box_image"><img src="lib/gui-icons/pen.png" alt="pen"></div>
+           <div class="text-box_content">';
+            echo '<h2>';the_title(); echo '</h2>';
+            echo '<p>';the_content(); echo '</p>';
+       echo '</div>
+       </div>';
       endwhile;
       ?>
-
-    <div class="text-box">
-      <div class = "text-box_image"><img src="lib/gui-icons/pen.png" alt="pen"></div>
-      <div class="text-box_content">
-        <h2>Custom Design</h2>
-        <p>Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
-      </div>
-      </div>
-
+      
 </div>
 <?php get_footer() ?>
