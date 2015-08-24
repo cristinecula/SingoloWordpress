@@ -4,8 +4,8 @@
 <div class="about" id="about">
   <div class="midpage">
     <div class="page_title">
-      <h1>About Us</h1>
-      <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+       <h1 ><?php echo get_the_title(); ?></h1>
+      <p><?php echo get_post_meta($post->ID, 'About', true);; ?></p>
     </div>
     <div class="about_person">
       <img src="lib/pictures/person1.png" alt="">

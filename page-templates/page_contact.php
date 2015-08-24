@@ -4,10 +4,8 @@
 <div class="contact" id="contact">
   <div class="midpage">
     <div class="page_title">
-      <h1>Get a Quote</h1>
-      <p>
-        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
-      </p>
+       <h1 ><?php echo get_the_title(); ?></h1>
+      <p><?php echo get_post_meta($post->ID, 'Contact', true);; ?></p>
     </div>
     <div class="contact_container">
       <form class="contact_form"action="#">
