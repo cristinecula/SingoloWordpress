@@ -21,9 +21,9 @@
           Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. 
         </p>
         <div>
-          <p><img src="images/contact_pin.png">Elm St. 14/05 Lost City</p>
-          <p><img src="images/contact_phone.png">03528 331 86 35</p>
-          <p><img src="images/contact_mail.png">info@singolo.com</p>
+          <p><img src="http://localhost/wp-content/uploads/2015/08/contact_pin.png">Elm St. 14/05 Lost City</p>
+          <p><img src="http://localhost/wp-content/uploads/2015/08/contact_phone.png">03528 331 86 35</p>
+          <p><img src="http://localhost/wp-content/uploads/2015/08/contact_mail.png">info@singolo.com</p>
         </div>
       </div>
     </div>

@@ -5,42 +5,31 @@
   <div class="midpage">
     <div class="page_title">
        <h1 ><?php echo get_the_title(); ?></h1>
-      <p><?php echo get_post_meta($post->ID, 'About', true);; ?></p>
+      <p><?php echo get_post_meta($post->ID, 'About', true); ?></p>
+
     </div>
-    <div class="about_person">
-      <img src="lib/pictures/person1.png" alt="">
-      <h3>Adam Jensen</h3>
-      <p>Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
-      <div class="social-media">
-        <div><img src="images/facebook.png" alt=""></div>
-        <div><img src="images/google+.png" alt=""></div>
-        <div><img src="images/twitter.png" alt=""></div>
-        <div><img src="images/linkedin.png" alt=""></div>
-      </div>
-    </div>
-    <div class="about_person">
-      <img src="lib/pictures/person2.png" alt="">
-      <h3>Desmond Miles</h3>
-      <p>Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
-      <div class="social-media">
-        <div><img src="images/facebook.png" alt=""></div>
-        <div><img src="images/google+.png" alt=""></div>
-        <div><img src="images/twitter.png" alt=""></div>
-        <div><img src="images/linkedin.png" alt=""></div>
-      </div>
-    </div>
-    <div class="about_person">
-      <img src="lib/pictures/person3.png" alt="">
-      <h3>Scolara Visari</h3>
-      <p>Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
-      <div class="social-media">
-        <div><img src="images/facebook.png" alt=""></div>
-        <div><img src="images/google+.png" alt=""></div>
-        <div><img src="images/twitter.png" alt=""></div>
-        <div><img src="images/linkedin.png" alt=""></div>
-      </div>
-    </div>
+
+
+    <?php $args = array( 'post_type' => 'team');
+      $loop = new WP_Query( $args );
+      while ( $loop->have_posts() ) : $loop->the_post();
+      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+
+        echo '<div class="about_person">';
+          echo '<img src=" '; echo $image[0]; echo ' " alt=" ">';
+          echo '<h2>';the_title(); echo '</h2>';
+          echo '<p>';the_content(); echo '</p>';
+          echo '<div class="social-media">
+        <div><img src="http://localhost/wp-content/uploads/2015/08/facebook.png" alt=""></div>
+        <div><img src="http://localhost/wp-content/uploads/2015/08/google+.png" alt=""></div>
+        <div><img src="http://localhost/wp-content/uploads/2015/08/twitter.png" alt=""></div>
+        <div><img src="http://localhost/wp-content/uploads/2015/08/linkedin.png" alt=""></div>
+      </div>';
+       echo '</div>';
+      endwhile;
+      ?>
   </div>
 </div>
+
 
 <?php get_footer(); ?>
