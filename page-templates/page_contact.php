@@ -8,12 +8,12 @@
       <p><?php echo get_post_meta($post->ID, 'Contact', true);; ?></p>
     </div>
     <div class="contact_container">
-      <form class="contact_form"action="#">
-        <input type="text" name="name" placeholder="Name (Required)" required>
-        <input type="email" name="email" placeholder="Email (Required)" required>
-        <input type="text" name="subject" placeholder="Subject">
-        <textarea>Describe your project in detail...</textarea>
-        <input class = "contact_submit"type="submit" value="Send">
+      <form class="contact_form" method ="POST" action="<?php echo get_bloginfo('template_directory');?>/conectivity.php" >
+        <input type="text" name="Name" placeholder="Name (Required)" required>
+        <input type="email" name="Email" placeholder="Email (Required)" required>
+        <input type="text" name="Subject" placeholder="Subject">
+        <textarea name="Textarea" placeholder="Describe your project in detail..."></textarea>
+        <input class = "contact_submit" type="submit" value="Send">
       </form>
       <div class="contact_info">
         <h3>Contact Information</h3>
