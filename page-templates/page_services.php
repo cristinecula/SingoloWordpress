@@ -11,7 +11,6 @@
       $loop = new WP_Query( $args );
       while ( $loop->have_posts() ) : $loop->the_post();
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-
         echo '<div class="text-box">
            <div class = "text-box_image"><img src="';echo $image[0]; echo '" alt="pen"></div>
            <div class="text-box_content">';
@@ -22,5 +21,6 @@
       endwhile;
       ?>
 
+  </div>
 </div>
 <?php get_footer() ?>

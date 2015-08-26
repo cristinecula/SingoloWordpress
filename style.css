@@ -76,7 +76,7 @@ a{
 .main-nav a:hover{
   color: #f06c64;
 }
-.navigation_responsive{
+.menu_responsive{
   display: none;
   padding: 5px;
   border-radius: 3px;
@@ -91,7 +91,8 @@ a{
 }
 .slideshow_container{
   background: #f06c64;
-  transition:background-color 1000ms linear;
+  transition:background 1000ms ;
+
 }
 .slideshow_slide{
   position: relative;
@@ -116,8 +117,19 @@ a{
 }
 .slideshow_banner{
   padding: 10px;
-  width: 100%;
-  height: 100%;
+/*   width: 100%;
+height: 100%; */
+}
+.slide-content{
+  display: none;
+  padding: 15% 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.6);
+  z-index: 300;
 }
 /* @PAGE TITLE */
 .page_title h1{
@@ -302,7 +314,7 @@ a{
 .socia-media{
   margin-top: 15px;
 }
-.social-media div{
+.social-media a{
   display: inline-block;
   margin-right: 5px;
   padding: 5px;
@@ -314,7 +326,7 @@ a{
   cursor: pointer;
   transition:background-color 0.5s;
 }
-.social-media div:hover{
+.social-media a:hover{
   background: #CCC;
 }
 /* @CONTACT PAGE */
@@ -368,7 +380,7 @@ a{
 }
 input[type="text"]::-webkit-input-placeholder,
 input[type="email"]::-webkit-input-placeholder,
-textarea[type="text"]::-webkit-input-placeholder { 
+textarea::-webkit-input-placeholder { 
   color: #f1878a;
 }
 .contact_info{
@@ -453,12 +465,12 @@ textarea[type="text"]::-webkit-input-placeholder {
   .slideshow_container{
     height: 25%;
   }
-  .navigation_responsive{
+  .menu_responsive{
     display: inline-block;
     margin: 20px 20px 20px 0px;
     text-align: center;
   }
-  .navigation ul {
+  .menu ul {
     display:none;
     padding: 5px 15px;
     position: relative;
@@ -470,7 +482,7 @@ textarea[type="text"]::-webkit-input-placeholder {
     text-align: right;
     background: #2D3045;
   }
-  .navigation ul:after {
+  .menu ul:after {
     width:0px;
     height:0px;
     position:absolute;
@@ -482,15 +494,15 @@ textarea[type="text"]::-webkit-input-placeholder {
     border-right:7px solid transparent;
     border-bottom:7px solid #2D3045;
   }
-  .navigation li > span{
+  .menu li > span{
     display: none;
   }
-  .navigation li{
+  .menu li{
     display: block;
     margin-bottom: 15px;
     margin-right: 0;
   }
-  .navigation_responsive:hover, .navigation_responsive.active {
+  .menu_responsive:hover, .menu_responsive.active {
           text-decoration:none;
           color:#f06c64;
           background: #2D202A;
@@ -601,7 +613,7 @@ textarea[type="text"]::-webkit-input-placeholder {
   .text-box_content{
     width: 200px;
   }
-  .navigation ul {
+  .menu ul {
     right: 5px;
   }
   .portofolio_chooser > div {
