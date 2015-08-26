@@ -20,10 +20,10 @@
           echo '<h2>';the_title(); echo '</h2>';
           echo '<p>';the_content(); echo '</p>';
           echo '<div class="social-media">
-        <div><img src="http://localhost/wp-content/uploads/2015/08/facebook.png" alt=""></div>
-        <div><img src="http://localhost/wp-content/uploads/2015/08/google+.png" alt=""></div>
-        <div><img src="http://localhost/wp-content/uploads/2015/08/twitter.png" alt=""></div>
-        <div><img src="http://localhost/wp-content/uploads/2015/08/linkedin.png" alt=""></div>
+        <a href = " '; echo get_post_meta($post->ID, 'Facebook', true); echo '"><img src="http://localhost/wp-content/uploads/2015/08/facebook.png" alt=""></a>
+        <a href = " '; echo get_post_meta($post->ID, 'Google+', true); echo '"><img src="http://localhost/wp-content/uploads/2015/08/google+.png" alt=""></a>
+        <a href = " '; echo get_post_meta($post->ID, 'Twitter', true); echo '"><img src="http://localhost/wp-content/uploads/2015/08/twitter.png" alt=""></a>
+        <a href = " '; echo get_post_meta($post->ID, 'Linkedin', true); echo '"><img src="http://localhost/wp-content/uploads/2015/08/linkedin.png" alt=""></a>
       </div>';
        echo '</div>';
       endwhile;
