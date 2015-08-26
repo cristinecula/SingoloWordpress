@@ -6,15 +6,15 @@ $(document).ready(function() {
       this.$slider = $(id+'.slideshow');
       this.$slideContainer = $('.slideshow_container',this.$slider);
       this.$slides = $('.slideshow_slide',this.$slideContainer);
-      this.$btnPrev=$('.btn-prev',this.$slider);
-      this.$btnNext=$('.btn-next',this.$slider);
+      this.$btnPrev = $('.btn-prev',this.$slider);
+      this.$btnNext = $('.btn-next',this.$slider);
+      this.$content = $('.slide-content', this.$slides)
       this.anim=1000;
       this.interval;
       var that=this;
       this.totalWidth=0;
       this.widthRefresher=function(){
         that.width= $window.width(); 
-        console.log("Width refreshed" +that);
       };
       this.widthRefresher();
       this.$slides.width(this.width);
@@ -38,11 +38,14 @@ $(document).ready(function() {
         });
       };
       this.backgroundChanger=function(){
-        var randColor = 'rgb(' + (Math.floor(Math.random() * 256))
+        var randColor1 = 'rgb(' + (Math.floor(Math.random() * 256))
+        + ',' + (Math.floor(Math.random() * 256)) 
+        + ',' + (Math.floor(Math.random() * 256)) + ')';
+        var randColor2 = 'rgb(' + (Math.floor(Math.random() * 256))
         + ',' + (Math.floor(Math.random() * 256)) 
         + ',' + (Math.floor(Math.random() * 256)) + ')';
                 
-        that.$slideContainer.css("background-color", randColor);
+        that.$slideContainer.css("background", 'linear-gradient(to bottom right,'+ randColor1+','+ randColor2+')');
       };
 
       this.$btnNext.on('click',function(){
@@ -53,6 +56,9 @@ $(document).ready(function() {
         that.goPrev();
         that.backgroundChanger();
       });
+      this.$slides.on('click', function(){
+        that.$content.toggle();
+      })
       window.addEventListener('resize', function(event){
         that.widthRefresher();
         that.$slideContainer.children().width(that.width);
@@ -67,9 +73,7 @@ $(document).ready(function() {
       $.each(that.$slideContainer.children(),
         function(){
           that.totalWidth+=that.width+4; 
-          console.log(that.totalWidth);
         });
-      console.log("Final Calc"+that.totalWidth);
     };  
     Slider.prototype.setContainerWidth=function(){
       var that = this;

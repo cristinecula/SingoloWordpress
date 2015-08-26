@@ -15,6 +15,7 @@
 
         echo '<div class="slideshow_slide">
                  <img class="slideshow_banner" src= " '; echo $image[0]; echo'" />
+                 <div class="slide-content"> ';the_content(); echo '</div>
               </div>';
       endwhile;
     ?>
