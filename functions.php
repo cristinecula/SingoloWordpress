@@ -73,6 +73,17 @@ function create_post_type() {
       'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt','custom-fields' )
     )
   );
+   register_post_type( 'contactInfo',
+    array(
+      'labels' => array(
+        'name' => __( 'contactInfo' ),
+        'singular_name' => __( 'contactInfo' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt','custom-fields' )
+    )
+  );
 }
 ?>
 

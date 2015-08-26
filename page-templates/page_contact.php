@@ -8,22 +8,31 @@
       <p><?php echo get_post_meta($post->ID, 'Contact', true);; ?></p>
     </div>
     <div class="contact_container">
-      <form class="contact_form" method ="POST" action="<?php echo get_bloginfo('template_directory');?>/conectivity.php" >
-        <input type="text" name="Name" placeholder="Name (Required)" required>
-        <input type="email" name="Email" placeholder="Email (Required)" required>
-        <input type="text" name="Subject" placeholder="Subject">
-        <textarea name="Textarea" placeholder="Describe your project in detail..."></textarea>
+      <form class="contact_form" method ="POST" action="" >
+        <input type="hidden" name="form_title" value="Contact"/>
+        <input type="text" name="TheName" placeholder="Name (Required)" required>
+        <input type="email" name="TheEmail" placeholder="Email (Required)" required>
+        <input type="text" name="TheSubject" placeholder="Subject">
+        <textarea name="TheTextarea" placeholder="Describe your project in detail..."></textarea>
         <input class = "contact_submit" type="submit" value="Send">
       </form>
+      <?php echo do_shortcode("[cfdb-save-form-post]"); ?>
+
       <div class="contact_info">
         <h3>Contact Information</h3>
         <p>
           Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. 
         </p>
         <div>
-          <p><img src="http://localhost/wp-content/uploads/2015/08/contact_pin.png">Elm St. 14/05 Lost City</p>
-          <p><img src="http://localhost/wp-content/uploads/2015/08/contact_phone.png">03528 331 86 35</p>
-          <p><img src="http://localhost/wp-content/uploads/2015/08/contact_mail.png">info@singolo.com</p>
+
+          <?php $args = array( 'post_type' => 'contactInfo');
+          $loop = new WP_Query( $args );
+          while ( $loop->have_posts() ) : $loop->the_post();
+            $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+            echo '<p><img src=" '; echo $image[0]; echo '">'; echo the_content(); echo '</p>';
+          endwhile;
+          ?>
+
         </div>
       </div>
     </div>
