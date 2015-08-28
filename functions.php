@@ -1,13 +1,11 @@
 <?php
-  function wp_register_theme_menu() {
-      register_nav_menu( 'primary', 'Main Navigation Menu' );
-  }
-  add_action( 'init', 'wp_register_theme_menu' );
-?>
+function wp_register_theme_menu() {
+    register_nav_menu( 'primary', 'Main Navigation Menu' );
+}
+add_action( 'init', 'wp_register_theme_menu' );
 
-<?php add_theme_support('post-thumbnails '); ?>
+add_theme_support('post-thumbnails '); 
 
-<?php 
 function project_init() {
   register_taxonomy(
     'project_type',
@@ -24,9 +22,8 @@ function project_init() {
   );
 }
 add_action( 'init', 'people_init' );
-?>
 
-<?php add_action( 'init', 'create_post_type' );
+add_action( 'init', 'create_post_type' );
 add_theme_support( 'post-thumbnails' ); 
 function create_post_type() {
   register_post_type( 'projects',
@@ -85,10 +82,6 @@ function create_post_type() {
     )
   );
 }
-?>
-
-<?php
-
 add_action( 'init', 'create_proj_tax' );
 
 function create_proj_tax() {
@@ -103,4 +96,3 @@ function create_proj_tax() {
 
   );
 }
-?>
