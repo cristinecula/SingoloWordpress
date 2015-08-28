@@ -223,6 +223,12 @@ height: 100%; */
   transition:margin 1s;
   cursor: pointer;
 }
+.project img{
+  height: auto; 
+  width: auto; 
+  max-width: 300px; 
+  max-height: 300px;
+}
 
 .project:nth-child(4n+1){
   padding-left: 0px;

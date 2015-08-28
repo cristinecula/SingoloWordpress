@@ -10,16 +10,22 @@
   ProjectListing.prototype.filter = function(selected) {
     var category, isSelected;
     var ourClass = selected;
-    this.el.children().hide();
-    this.el.children().each(function(ix, item) {
-      var categories = $(item).data('category').split(' ')
-      var has = categories.filter(function(c) {
-            return c === ourClass
-          })
-      if(has.length) {
-        $(item).show('slow')
-      };
-    });
+    if(ourClass =='All')
+    {
+      this.el.children().show('slow');
+    }
+    else{
+      this.el.children().hide();
+      this.el.children().each(function(ix, item) {
+        var categories = $(item).data('category').split(' ')
+        var has = categories.filter(function(c) {
+              return c === ourClass
+            })
+        if(has.length) {
+          $(item).show('slow')
+        };
+      });
+    }
   }
   window.ProjectListing = ProjectListing
 }());

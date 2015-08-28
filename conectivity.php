@@ -1,32 +1,17 @@
 <?php
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'Contact');
-define('DB_USER','Mircea');
-define('DB_PASSWORD','123456');
+  require_once('../../../wp-load.php');
 
-  $con=mysql_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Failed to connect to MySQL: " . mysql_error()); $db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_error());
-
-
-  $name     = $_POST['Name'];
-  $email    = $_POST['Email'];
-  $subject  = $_POST['Subject'];
-  $textarea = $_POST['Textarea'];
-
-  $query = "INSERT INTO contact(name,email,subject,textarea)
-            VALUES('$name','$email','$subject','$textarea')"; 
-
-  $result = mysql_query($query);
-  if($result) 
-  { 
-    header("Location: http://localhost/?page_id=28");
-    die();
-
-  } 
-   else { die('Error: '.mysql_error($con)); }
-
-
-  mysql_close($con);
+  global $wpdb;
   
+  $name     = $_POST['TheName'];
+  $email    = $_POST['TheEmail'];
+  $subject  = $_POST['TheSubject'];
+  $textarea = $_POST['TheTextarea'];
+  $table_name = $wpdb->prefix . "contact";
 
-?>
+  $wpdb->insert( $table_name, array( 'name' => $name, 'email' => $email,
+    'subject' => $subject,'text' => $textarea,)
+  );
 
+
+ ?>

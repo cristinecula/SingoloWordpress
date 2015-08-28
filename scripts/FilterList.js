@@ -8,9 +8,12 @@
         this.categories[c] = true;
       }.bind(this))
     }.bind(this))
+
+    this.el.append('<div data-value="All">All</div>')
     for(c in this.categories) {
       this.el.append($(this.template(c)))
     }
+
     this.selected ;
     this.el.on('click', 'div', this.onClick.bind(this));
   }
